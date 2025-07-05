@@ -57,8 +57,16 @@ const DiaryCard = ({ diaryTask }: {diaryTask: DiaryTask}) => {
         </div>
 
         <div className="px-6 w-62">
-            <h5 className="text-zinc-400 text-sm">Time remaining</h5>
-            <h6 className="text-zinc-600">{Math.floor(remainingTime/60)} hour {remainingTime%60} minutes</h6>
+            {
+            remainingTime > 0 ?
+              <>
+                <h5 className="text-zinc-400 text-sm">Time remaining</h5>
+                <h6 className="text-zinc-600">{Math.floor(remainingTime/60)} hour {remainingTime%60} minutes</h6>
+              </>:
+              <>
+                <h5 className="text-zinc-400 text-sm">Completed</h5>
+              </>
+            }
         </div>
       </div>
     </div>
