@@ -1,3 +1,4 @@
+import BookPage from "./pages/BookPage"
 import HomePage from "./pages/HomePage"
 import RootLayout from "./pages/layouts/RootLayout"
 import LoginPage from "./pages/LoginPage"
@@ -9,6 +10,7 @@ const App = () => {
       <Routes>
         <Route element={<RootLayout />}>
           <Route index element={<HomePage />} />
+          <Route path="books" element={<BookPage />} />
         </Route>
         
         <Route path="login" element={<LoginPage />} />
