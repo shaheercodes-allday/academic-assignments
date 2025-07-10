@@ -5,7 +5,6 @@ const books = [
         coverImage: "fallen-stars.jpg",
         description: "A gripping tale of love and loss set against the backdrop of a dystopian future.",
         genre: "Science Fiction",
-        isbn: "978-3-16-148410-0",
         title: "Fallen Stars"
     },
     {
@@ -14,7 +13,6 @@ const books = [
         coverImage: "java-in-a-nutshell.jpg",
         description: "A complete guide to the Java programming language",
         genre: "Technology",
-        isbn: "979-3-16-652633-1",
         title: "Java in a Nutshell"
     },
     {
@@ -23,7 +21,6 @@ const books = [
         coverImage: "protocols.jpg",
         description: "A book on science of human behavior and performance",
         genre: "Psychology",
-        isbn: "939-3-86-511811-1",
         title: "Protocols"
     },
     {
@@ -32,7 +29,6 @@ const books = [
         coverImage: "the-court-of-death.jpg",
         description: "A thrilling novel that delves into the world of secret societies and ancient mysteries.",
         genre: "Visionary",
-        isbn: "919-3-16-147770-0",
         title: "The Court of Death"
     },
     {
@@ -41,7 +37,6 @@ const books = [
         coverImage: "the-secret-of-secrets.jpg",
         description: "A captivating mystery that explores the hidden truths of history and religion.",
         genre: "Science",
-        isbn: "979-3-16-652633-1",
         title: "The Secret of Secrets"
     },
 ]

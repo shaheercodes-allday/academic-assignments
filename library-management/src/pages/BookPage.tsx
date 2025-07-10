@@ -22,7 +22,7 @@ const BookPage = () => {
 
   return (
     <section className="flex flex-col gap-8 pt-28 pb-8 px-8 bg-zinc-100">
-      <div className="inline-block mr-4 text-zinc-500 cursor-pointer underline" onClick={() => setIsAddBookCardVisible(true)}>Add book</div>
+      <div className="inline-block self-start rounded-md px-6 py-2 mr-4 border-2 border-zinc-400 text-zinc-500 underline font-medium cursor-pointer" onClick={() => setIsAddBookCardVisible(true)}>Add book</div>
 
       {isAddBookCardVisible && <AddBookCard setIsAddBookCardVisible={setIsAddBookCardVisible} />}
 
