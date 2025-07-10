@@ -20,7 +20,7 @@ const Header = () => {
   }
 
   return (
-    <header className="flex items-center justify-between px-8 py-6 fixed top-0 left-0 right-0">
+    <header className="flex items-center justify-between px-8 py-6 fixed top-0 left-0 right-0 z-40 bg-zinc-100">
       <div>
         <h1 className="text-2xl font-bold"><Link to="/">Libxcel.</Link></h1>
         {isAdmin && (
@@ -30,11 +30,17 @@ const Header = () => {
         )}
       </div>
 
-      <div className="flex gap-8 text-zinc-600">
-        <Link to="/books">Books</Link>
-        <Link to="/books">Issue/Return Books</Link>
-        <Link to="/books">View Issued Books</Link>
-      </div>
+      {
+        isLoggedIn && (
+          <div className="flex gap-8 text-zinc-600">
+            <Link to="/books">Books</Link>
+            <Link to="/issue-book">Issue Books</Link>
+            <Link to="/return-book">Return Books</Link>
+            <Link to="/students">Students</Link>
+            <Link to="/view-issued-books">View Issued Books</Link>
+          </div>
+        )
+      }
 
       {
         isLoggedIn && (

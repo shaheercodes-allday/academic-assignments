@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import BookCard from "../components/cards/BookCard";
 import { Book } from "../interfaces/Book";
+import AddBookCard from "../components/cards/AddBookCard";
 
 const BookPage = () => {
     const [books, setBooks] = useState([]);
+    const [isAddBookCardVisible, setIsAddBookCardVisible] = useState(false);
 
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     const navigate = useNavigate();
@@ -19,10 +21,16 @@ const BookPage = () => {
     }, []);
 
   return (
-    <section className="pt-32 px-8 flex items-start gap-12 h-screen bg-zinc-100">
-      {books.map((book: Book) => (
-        <BookCard key={book.isbn} book={book} />
-      ))}
+    <section className="flex flex-col gap-8 pt-28 pb-8 px-8 bg-zinc-100">
+      <div className="inline-block mr-4 text-zinc-500 cursor-pointer underline" onClick={() => setIsAddBookCardVisible(true)}>Add book</div>
+
+      {isAddBookCardVisible && <AddBookCard setIsAddBookCardVisible={setIsAddBookCardVisible} />}
+
+      <div className="grid grid-cols-3 gap-8">
+        {books.map((book: Book) => (
+          <BookCard key={book.title} book={book} />
+        ))}
+      </div>
     </section>
   )
 }

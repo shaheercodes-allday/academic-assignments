@@ -7,13 +7,13 @@ const BookCard = ({book}: {book: Book}) => {
       return;
     }
     const books = JSON.parse(localStorage.getItem('books') || '[]');
-    const updatedBooks = books.filter((b: Book) => b.isbn !== book.isbn);
+    const updatedBooks = books.filter((b: Book) => b.title !== book.title);
     localStorage.setItem('books', JSON.stringify(updatedBooks));
     window.location.reload();
   }
 
   return (
-    <article className="bg-zinc-50 px-6 py-8 h-78 rounded-lg shadow-sm flex gap-8">
+    <article className="bg-zinc-50 px-6 py-8 min-h-78 rounded-lg shadow-sm flex gap-8">
         <div className="self-center">
             <img src={book.coverImage} alt={book.title} className="w-36 object-cover rounded-md shadow-sm" />
         </div>
