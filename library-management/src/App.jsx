@@ -1,10 +1,19 @@
+import HomePage from "./pages/HomePage"
+import RootLayout from "./pages/layouts/RootLayout"
 import LoginPage from "./pages/LoginPage"
+import { BrowserRouter, Routes, Route } from "react-router"
 
 const App = () => {
   return (
-    <div>
-      <LoginPage />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<RootLayout />}>
+          <Route index element={<HomePage />} />
+        </Route>
+        
+        <Route path="login" element={<LoginPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
